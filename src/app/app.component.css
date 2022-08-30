@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    /*background: #E5E5E5;*/
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100vw;
+    margin: 1rem 0rem;
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    width: 512px;
+    height: 64px;
+    font-size: 30px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100vw;
+}
+
+.todo-input #inputTask {
+    font-size: 24px;
+    width: 366px;
+    height: 64px;
+    border: 2px solid black;
+    margin: 0.5rem 0.5rem;
+    text-indent: 0.5rem;
+}
+
+.todo-input #btnTask {
+    font-size: 24px;
+    background-color: transparent;
+    width: 128px;
+    height: 68px;
+    border: 2px solid black;
+    margin: 0.5rem 0.5rem;
+}
+
+.todo-input #btnTask:hover{
+    cursor: pointer;
+}
+
+.todo-output {
+    display: flex;
+    justify-content: center;
+}
+
+.todo-container {
+    margin: 1rem auto;
+    max-width: 750px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    position: relative;
+    width: 512px;
+    height: 64px;
+    border: 2px solid black;
+    margin: 0.5rem 0rem;
+}
+
+.todo-item label {
+    display: block;
+    padding: 12px 0 12px 48px;
+}
+
+.todo-item input {
+    z-index: 1;
+    height: 35px;
+    left: 1.5%;
+    top: 25%;
+    opacity: 0;
+    position: absolute;
+    width: 35px;
+}
+
+.todo-item input + label::before {
+    border: 2px solid;
+    content: "";
+    height: 30px;
+    left: 1.5%;
+    top: 25%;
+    position: absolute;
+    width: 30px;
+}
+
+.todo-item input + label::after {
+    content: "";
+    border: 4px solid;
+    border-left: 0;
+    border-top: 0;
+    height: 15px;
+    left: 3.5%;
+    top: 30%;
+    /*left: 14px;*/
+    opacity: 0;
+    position: absolute;
+    /*top: 6px;*/
+    transform: rotate(45deg);
+    /*transition: opacity 0.2s ease-in-out;*/
+    width: 12px;
+}
+
+.todo-item input:checked + label::after {
+    opacity: 1 !important;
+}
+
+.todo-item input:hover{
+    cursor: pointer;
+}
+
+.todo-item #btnDel:hover{
+    cursor: pointer;
+    color: red;
+}
