@@ -127,6 +127,10 @@ main{
     opacity: 1 !important;
 }
 
+.todo-item input:checked + label {
+    text-decoration: line-through;
+}
+
 .todo-item input:hover{
     cursor: pointer;
 }
